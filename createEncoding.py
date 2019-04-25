@@ -16,7 +16,7 @@ except (OSError, IOError) as error:
 
 # create new encoding and add to dictionary
 friendEncoding = face_recognition.face_encodings(friendImage)
-encodings[friendId] = friendEncoding
+encodings[friendId] = friendEncoding[0]
 
 # write encodings dictionary out to file
 outfile = open(userPath + "/encodings.pickle", "wb")
