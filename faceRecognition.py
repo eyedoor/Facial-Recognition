@@ -6,14 +6,15 @@ import face_recognition
 eventImage = face_recognition.load_image_file(sys.argv[1])
 eventEncodings = face_recognition.face_encodings(eventImage)
 numFaces = len(eventEncodings)
+userPath = sys.argv[2]
 
 #load from pickle file
-infile = open(sys.argv[2] + "/encodings.pickle", "rb")
+infile = open(userPath + "/encodings.pickle", "rb")
 encodingDict = pickle.load(infile)
 infile.close()
 
-imageIDs = encodingDict.keys()
-encodings = encodingDict.values()
+imageIDs = list(encodingDict.keys())
+encodings = list(encodingDict.values())
 
 matches = []
 
