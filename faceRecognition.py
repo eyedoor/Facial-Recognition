@@ -6,7 +6,6 @@ import face_recognition
 eventImage = face_recognition.load_image_file(sys.argv[1])
 eventEncodings = face_recognition.face_encodings(eventImage)
 numFaces = len(eventEncodings)
-#prominentEncoding = eventEncodings[0]
 
 #load from pickle file
 infile = open(sys.argv[2] + "/encodings.pickle", "rb")
